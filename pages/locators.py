@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-
+    #GO_TO_CART_BUTTON = (By.CSS_SELECTOR, "# default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
 
 class LoginPageLocators():
     REGISTRATION_LINK = (By.CSS_SELECTOR, "#")
@@ -20,3 +20,10 @@ class ProductPageLocators():
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    GO_TO_CART_BUTTON = (By.CSS_SELECTOR, "#default > header > div.page_inner > div > div.basket-mini.pull-right.hidden-xs > span > a")
+
+
+class CartPageLocators():
+    #CART_IS_EMPTY =
+    CART_ITEMS = (By.CSS_SELECTOR, '#basket_formset > div')
+    EMPTY_CART_MESSAGE = (By.CSS_SELECTOR, '#content_inner > p')
