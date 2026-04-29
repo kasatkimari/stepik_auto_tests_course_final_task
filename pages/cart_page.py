@@ -1,9 +1,3 @@
-from selenium.common.exceptions import NoSuchElementException
-from selenium.common.exceptions import NoAlertPresentException # в начале файла
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-from stepik_auto_tests_course_final_task.pages.locators import BasePageLocators
 from stepik_auto_tests_course_final_task.pages.locators import CartPageLocators
 from .base_page import BasePage
 
