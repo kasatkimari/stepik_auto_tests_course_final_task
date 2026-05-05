@@ -5,8 +5,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
-    def add_to_cart_button(self):
-        add_button = self.browser.find_element(*ProductPageLocators.ADD_TO_CART_BUTTON)
+    def add_to_basket_button(self):
+        add_button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON)
         add_button.click()
 
     def get_product_name(self):
@@ -25,18 +25,18 @@ class ProductPage(BasePage):
         print(f"✓ Название '{book_name}' совпадает")
 
     def should_be_basket_message_with_correct_price(self, book_price):
-        #basket_message = self.browser.find_element(*ProductPageLocators.CART_MESSAGE)
-        basket_message = WebDriverWait(self.browser, 5).until(
-                EC.visibility_of_element_located(ProductPageLocators.CART_MESSAGE)
+        #basket_message = self.browser.find_element(*ProductPageLocators.BUSKET_MESSAGE)
+        busket_message = WebDriverWait(self.browser, 5).until(
+                EC.visibility_of_element_located(ProductPageLocators.BASKET_MESSAGE)
             )
         # В сообщении должна быть общая стоимость корзины, и она должна равняться цене товара
-        print(f"✓ Сообщение корзины: {basket_message.text}")
-        assert book_price == basket_message.text, f"Цена '{book_price}' не найдена в сообщении корзины: {basket_message.text}"
+        print(f"✓ Сообщение корзины: {busket_message.text}")
+        assert book_price == busket_message.text, f"Цена '{book_price}' не найдена в сообщении корзины: {busket_message.text}"
         print(f"✓ Цена '{book_price}' совпадает")
 
-    def go_to_cart_button(self):
-        cart_button = self.browser.find_element(*ProductPageLocators.GO_TO_CART_BUTTON)
-        cart_button.click()
+    def go_to_busket_button(self):
+        busket_button = self.browser.find_element(*ProductPageLocators.GO_TO_BASKET_BUTTON)
+        busket_button.click()
 
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), \
